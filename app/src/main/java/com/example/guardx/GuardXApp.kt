@@ -11,8 +11,8 @@ import com.example.guardx.ui.theme.LoginScreen
 fun GuardXApp() {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "login") {
-        composable("login") { LoginScreen(onLoginSuccess = { navController.navigate("home") }) }
-        composable("home") { HomeScreen(navController) }
+        composable("login") { LoginScreen() }
+        composable("home") { HomeScreen() }
 //        composable("first_aid") { FirstAidScreen() }
 //        composable("be_volunteer") { BeVolunteerScreen() }
         // Add more composable destinations for other pages
