@@ -1,6 +1,7 @@
 package com.example.guardx.ui.theme
 
 import android.util.Patterns
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -23,13 +24,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.auth.FirebaseAuth
 
 
 @Composable
-fun LoginScreen() {
-    val navController = rememberNavController()
+fun AuthScreen(navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var errorMessage by remember { mutableStateOf<String?>(null) }
@@ -42,7 +44,8 @@ fun LoginScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "GuardX Login", style = MaterialTheme.typography.titleLarge)
+        Text(text = "Welcome to", style = MaterialTheme.typography.headlineLarge)
+        Text(text = "GuardX", fontSize = 65.sp)
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -120,11 +123,6 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = {
-            // Optionally, handle "Forgot Password" or "Sign Up"
-        }) {
-            Text("Forgot Password?")
-        }
         errorMessage?.let {
             Spacer(modifier = Modifier.height(16.dp))
             Text(

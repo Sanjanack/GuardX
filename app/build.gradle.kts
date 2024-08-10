@@ -77,6 +77,10 @@ dependencies {
 
     implementation(libs.play.services.auth)
 
+        implementation(libs.retrofit) // Retrofit library
+        implementation(libs.converter.gson) // Converter for Gso
+
+
 
 
 
