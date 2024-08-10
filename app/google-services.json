@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "592602361444",
+    "project_id": "guardxapp",
+    "storage_bucket": "guardxapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592602361444:android:fe55707a79a11489203971",
+        "android_client_info": {
+          "package_name": "com.example.guardx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvsZmlKYA6l3k01CerKK-rNAGPzR9yv9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
