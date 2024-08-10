@@ -80,6 +80,17 @@ dependencies {
         implementation(libs.retrofit) // Retrofit library
         implementation(libs.converter.gson) // Converter for Gso
 
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+
+    dependencies {
+        implementation(libs.play.services.maps) // Check for latest version
+        implementation(libs.play.services.location) // Check for latest version
+    }
+
+
+
+
 
 
 

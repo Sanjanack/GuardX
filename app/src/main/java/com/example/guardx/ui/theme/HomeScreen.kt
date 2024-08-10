@@ -33,21 +33,25 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.guardx.R
 import com.google.firebase.auth.FirebaseAuth
+import androidx.compose.runtime.collectAsState
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeScreen(navController: NavHostController, onLogout: () -> Unit) {
+fun HomeScreen(navController: NavHostController, onLogout: () -> Unit, newsViewModel: NewsViewModel = viewModel()) {
     var expanded by remember { mutableStateOf(false) }
     var menuExpanded by remember { mutableStateOf(false) }
     var nestedMenuExpanded by remember { mutableStateOf(false) }
     var profileExpanded by remember { mutableStateOf(false) }
     val quote = "Empowering You to Stand Strong in Any Storm!"
     val fontFamily = FontFamily(Font(R.font.nyala))
+    val headlines by newsViewModel.headlines.collectAsState()
     Scaffold(
         topBar = {
             CustomTopAppBar(
@@ -68,6 +72,8 @@ fun HomeScreen(navController: NavHostController, onLogout: () -> Unit) {
                         .padding(bottom = 16.dp)
                         .align(Alignment.CenterHorizontally)
                 )
+                Spacer(modifier = Modifier.padding(8.dp))
+                RunningHeadlines(headlines = headlines)
                 Spacer(modifier = Modifier.padding(8.dp))
                 Image(painter = painterResource(id = R.drawable.image),
                     contentDescription = "Description of the image",
