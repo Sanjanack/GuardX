@@ -1,6 +1,7 @@
 package com.example.guardx.ui.theme
 
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -39,12 +40,14 @@ import androidx.navigation.compose.rememberNavController
 import com.example.guardx.R
 import com.google.firebase.auth.FirebaseAuth
 import androidx.compose.runtime.collectAsState
+import com.google.android.gms.location.FusedLocationProviderClient
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun HomeScreen(navController: NavHostController, onLogout: () -> Unit, newsViewModel: NewsViewModel = viewModel()) {
+fun HomeScreen(navController: NavHostController, onLogout: () -> Unit, newsViewModel: NewsViewModel = viewModel()
+) {
     var expanded by remember { mutableStateOf(false) }
     var menuExpanded by remember { mutableStateOf(false) }
     var nestedMenuExpanded by remember { mutableStateOf(false) }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GuardX</string>
+    <string name = "the_map_api_key">AIzaSyCTzNt5W5_UPVycaoyFmIXMPGIS5403QmQ</string>
 </resources>
